@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" name="FinalSurge CrossBrowser" parallel="tests">
+<suite thread-count="3" name="FinalSurge CrossBrowser" parallel="tests">
     <listeners>
         <listener class-name="tests.TestListener"/>
         <listener class-name="tests.AnnotationTransformer"/>
@@ -15,6 +15,12 @@
         <classes>
             <class name="tests.RegisterTest"/>
             <parameter name="browser" value="edge"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="Firefox">
+        <classes>
+            <class name="tests.RegisterTest"/>
+            <parameter name="browser" value="firefox"/>
         </classes>
     </test> <!-- Test -->
 </suite>

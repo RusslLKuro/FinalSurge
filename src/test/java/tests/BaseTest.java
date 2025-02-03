@@ -2,7 +2,6 @@ package tests;
 
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
@@ -18,16 +17,17 @@ public class BaseTest {
 
     LoginPage loginPage;
     RegisterPage registerPage;
-    WebDriver driver;
+
 
     @Parameters({"browser"})
     @BeforeMethod
     public void setUp(@Optional("chrome") String browser) {
         if (browser.equalsIgnoreCase("chrome")) {
             Configuration.browser = Browsers.CHROME;
-        }
-        else if (browser.equalsIgnoreCase("edge")) {
+        } else if (browser.equalsIgnoreCase("edge")) {
             Configuration.browser = Browsers.EDGE;
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            Configuration.browser = Browsers.FIREFOX;
         }
         Configuration.timeout = 10000;
         open("https://log.finalsurge.com/");
