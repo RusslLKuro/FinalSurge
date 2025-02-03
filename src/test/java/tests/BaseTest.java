@@ -4,6 +4,7 @@ import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import pages.LoginPage;
@@ -11,6 +12,7 @@ import pages.RegisterPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+@Listeners(TestListener.class)
 
 public class BaseTest {
 
